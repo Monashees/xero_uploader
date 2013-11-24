@@ -1,0 +1,8 @@
+ development:
+   cert_path: ~/Desktop/privatekey.pem
+ production:
+   cert_path: ~/Desktop/privatekey.pem 
+ test:
+   cert_path: ~/Desktop/privatekey.pem
+   
+         

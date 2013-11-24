@@ -1,0 +1,56 @@
+<h1>Listing transactions</h1>
+
+<h2>Import Transactions</h2>
+<p><%= link_to "Import Transactions", new_transaction_import_path %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fund</th>
+      <th>Invoice Number</th>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Due Date</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Unit amount</th>
+      <th>Account Code</th>
+      <th>Currency code</th>
+      <th>Currency rate</th>
+      <th>Xero Invoice ID</th>
+      <th>Reference</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.fund.name %></td>
+        <td><%= transaction.invoice_number %></td>
+        <td><%= transaction.xero_type %></td>
+        <td><%= transaction.name %></td>
+        <td><%= transaction.date %></td>
+        <td><%= transaction.due_date %></td>
+        <td><%= transaction.description %></td>
+        <td><%= transaction.quantity %></td>
+        <td><%= transaction.unit_amount %></td>
+        <td><%= transaction.account_code %></td>
+        <td><%= transaction.currency_code %></td>
+        <td><%= transaction.currency_rate %></td>
+        <td><%= transaction.xero_invoice_id %></td>
+        <td><%= transaction.reference %></td>
+        <td><%= link_to 'Show', transaction %></td>
+        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transaction', new_transaction_path %>

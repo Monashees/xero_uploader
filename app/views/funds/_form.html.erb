@@ -1,0 +1,33 @@
+<%= form_for(@fund) do |f| %>
+  <% if @fund.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fund.errors.count, "error") %> prohibited this fund from being saved:</h2>
+
+      <ul>
+      <% @fund.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :xero_key %><br>
+    <%= f.text_field :xero_key %>
+  </div>
+  <div class="field">
+    <%= f.label :xero_secret %><br>
+    <%= f.text_field :xero_secret %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

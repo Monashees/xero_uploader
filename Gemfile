@@ -32,6 +32,40 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'xeroizer', git: 'https://github.com/tubedude/xeroizer.git'
+gem 'roo'
+
+group :development do
+  gem "quiet_assets"
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "rails-erd"
+  gem "hirb"
+  gem 'guard-spork'
+end
+
+group :test do
+  gem "factory_girl_rails"
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'selenium-webdriver', '~> 2.35.1'
+end
+  
+group :test, :development do
+  gem 'guard', '>=2.1.0'
+  gem "rspec-rails"  
+  gem "capybara"
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+  gem 'growl'
+  gem 'spork'
+  gem 'spork-rails'
+end
+
+# gem 'builder', '~> 3.1.0'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

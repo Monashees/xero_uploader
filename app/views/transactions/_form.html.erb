@@ -1,0 +1,73 @@
+<%= form_for(@transaction) do |f| %>
+  <% if @transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+      <% @transaction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fund %><br>
+    <%= f.text_field :fund %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :invoice_number %><br>
+    <%= f.text_field :invoice_number %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.datetime_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :due_date %><br>
+    <%= f.datetime_select :duedate %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :unit_amount %><br>
+    <%= f.text_field :unit_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :account_code %><br>
+    <%= f.text_field :accountcode %>
+  </div>
+  <div class="field">
+    <%= f.label :currency_code %><br>
+    <%= f.text_field :currency_code %>
+  </div>
+  <div class="field">
+    <%= f.label :currency_rate %><br>
+    <%= f.text_field :currency_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :xero_invoice_id%><br>
+    <%= f.text_field :xero_invoice_id %>
+  </div>
+  <div class="field">
+    <%= f.label :reference %><br>
+    <%= f.text_field :reference %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

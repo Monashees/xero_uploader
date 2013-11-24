@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fund:</strong>
+  <%= @transaction.fund %>
+</p>
+
+<p>
+  <strong>Invoice Number:</strong>
+  <%= @transaction.invoice_number %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @transaction.type %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @transaction.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @transaction.date %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @transaction.due_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @transaction.description %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @transaction.quantity %>
+</p>
+
+<p>
+  <strong>Unit amount:</strong>
+  <%= @transaction.unit_amount %>
+</p>
+
+<p>
+  <strong>Account code:</strong>
+  <%= @transaction.account_code %>
+</p>
+
+<p>
+  <strong>Currency code:</strong>
+  <%= @transaction.currency_code %>
+</p>
+
+<p>
+  <strong>Currency rate:</strong>
+  <%= @transaction.currency_rate %>
+</p>
+
+<p>
+  <strong>Xero Invoice ID:</strong>
+  <%= @transaction.xero_invoice_id %>
+</p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @transaction.reference %>
+</p>
+
+<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
+<%= link_to 'Back', transactions_path %>

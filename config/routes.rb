@@ -1,9 +1,16 @@
 XeroUploader2::Application.routes.draw do
+  # resources :transactions do
+  #   collection { post :import }
+  # end
+  resources :transactions, :transaction_imports
+
+  resources :funds
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'transactions#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
