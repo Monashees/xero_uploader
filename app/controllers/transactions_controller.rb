@@ -68,6 +68,19 @@ class TransactionsController < ApplicationController
     end
   end
 
+  # DELETE /transactions/delete_all
+  # DELETE /transactions/delete_all.json
+  def delete_all
+    @transaction = Transaction.all
+    @transaction.each {|t| t.destroy}
+    respond_to do |format|
+      format.html { redirect_to transactions_url, notice: 'Everything was deleted.'  }
+      format.json { head :no_content }
+    end
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_transaction

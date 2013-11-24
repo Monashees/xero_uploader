@@ -1,5 +1,5 @@
  development:
-   cert_path: ~/Desktop/privatekey.pem
+   cert_path: /public/privatekey.pem
  production:
    cert_path: ~/Desktop/privatekey.pem 
  test:

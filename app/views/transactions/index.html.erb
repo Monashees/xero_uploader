@@ -45,7 +45,7 @@
         <td><%= transaction.reference %></td>
         <td><%= link_to 'Show', transaction %></td>
         <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', transaction, method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
@@ -54,3 +54,5 @@
 <br>
 
 <%= link_to 'New Transaction', new_transaction_path %>
+<%= link_to 'Send All to Xero', send_to_xero_index_path %>
+<%= link_to 'Destroy ALL!', delete_all_transactions_path, data: { confirm: 'Are you sure?' }   %>
