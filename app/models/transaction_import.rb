@@ -43,7 +43,11 @@ class TransactionImport
       transaction = Transaction.new
       transaction.attributes = row.to_hash.slice(*Transaction.accessible_attributes)
       fund = Fund.find_by name: row["fund"]
-      transaction.fund_id = fund.id
+      if fund.nil?
+        transaction.fund_id = nil
+      else
+        transaction.fund_id = fund.id
+      end
       # xxx
       Rails.logger.debug "Attributes -> #{transaction.attributes}"
       transaction

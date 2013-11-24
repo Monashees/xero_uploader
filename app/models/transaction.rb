@@ -1,5 +1,7 @@
 class Transaction < ActiveRecord::Base
   belongs_to :fund
+  
+  validates :fund, presence: true
 
   def self.open_spreadsheet(file)
     case File.extname(file.original_filename)
