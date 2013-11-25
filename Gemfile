@@ -55,7 +55,7 @@ group :test, :development do
   gem 'guard', '>=2.1.0'
   gem "rspec-rails"  
   gem "capybara"
-  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard-rspec'
   gem 'guard-livereload'
   gem 'growl'
