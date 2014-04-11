@@ -5,7 +5,7 @@ class TransactionImport
   include ActiveModel::Validations
 
   attr_accessor :file
-  
+
   # require 'roo'
 
   def initialize(attributes = {})
@@ -39,19 +39,23 @@ class TransactionImport
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).map do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      # transaction = Transaction.find_by_id(row["id"]) || Transaction.new
-      transaction = Transaction.new
-      transaction.attributes = row.to_hash.slice(*Transaction.accessible_attributes)
-      fund = Fund.find_by name: row["fund"]
-      if fund.nil?
-        transaction.fund_id = nil
-      else
-        transaction.fund_id = fund.id
+      if has_enough_data?(row)
+        # transaction = Transaction.find_by_id(row["id"]) || Transaction.new
+        transaction = Transaction.new
+        # Rails.logger.debug "Row data: #{row.inspect}"
+        transaction.attributes = row.to_hash.slice(*Transaction.accessible_attributes)
+        # fund = Fund.find_by name: row["fund"]
+        fund = Fund.find_by code: row["fund_code"]
+        if fund.nil?
+          transaction.fund_id = nil
+        else
+          transaction.fund_id = fund.id
+        end
+        # xxx
+        Rails.logger.debug "Attributes -> #{transaction.attributes}"
+        transaction
       end
-      # xxx
-      Rails.logger.debug "Attributes -> #{transaction.attributes}"
-      transaction
-    end
+    end.compact
   end
 
   def open_spreadsheet
@@ -62,5 +66,11 @@ class TransactionImport
     else raise "Unknown file type: #{file.original_filename}"
     end
   end
+
+  private
+  def has_enough_data?(row)
+    row.keep_if {|k,v| !v.nil?}.size > 7
+  end
+
 end
 

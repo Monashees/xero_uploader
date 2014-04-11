@@ -3,6 +3,10 @@
 <h2>Import Transactions</h2>
 <p><%= link_to "Import Transactions", new_transaction_import_path %></p>
 
+<p><%= link_to 'New Transaction', new_transaction_path %> |
+<%= link_to 'Send All to Xero', send_to_xero_index_path %> |
+<%= link_to 'Destroy ALL!', delete_all_transactions_path, data: { confirm: 'Are you sure?' }   %></p>
+
 <table>
   <thead>
     <tr>

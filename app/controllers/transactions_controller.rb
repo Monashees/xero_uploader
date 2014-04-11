@@ -25,7 +25,7 @@ class TransactionsController < ApplicationController
   def import
     Product.import(import_params)
     redirect_to transactions_path, notice: "Transactions imported."
-    
+
   end
 
   # POST /transactions
@@ -91,7 +91,7 @@ class TransactionsController < ApplicationController
     def transaction_params
       params.require(:transaction).permit(:fund_id, :xero_type, :name, :date, :due_date, :description, :quantity, :unit_amount, :account_code, :currency_code, :currency_rate, :reference, :invoice_number)
     end
-    
+
     def import_params
       params.require(:file)
     end

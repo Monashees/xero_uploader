@@ -5,7 +5,7 @@ gem 'rails', '4.0.1'
 # gem 'ruby', '2.0.0'
 
 group :production do
-  gem 'rails_12factor' 
+  gem 'rails_12factor'
 
 # Use sqlite3 as the database for Active Record
   gem 'pg'
@@ -38,6 +38,8 @@ group :doc do
 end
 
 gem 'xeroizer', git: 'https://github.com/tubedude/xeroizer.git'
+# gem 'xeroizer'
+
 gem 'roo'
 
 group :development do
@@ -47,6 +49,8 @@ group :development do
   gem "rails-erd"
   gem "hirb"
   gem 'guard-spork'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do
@@ -55,11 +59,11 @@ group :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver', '~> 2.35.1'
 end
-  
+
 group :test, :development do
   gem 'sqlite3'
   gem 'guard', '>=2.1.0'
-  gem "rspec-rails"  
+  gem "rspec-rails"
   gem "capybara"
   gem 'rb-fsevent' #, :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard-rspec'

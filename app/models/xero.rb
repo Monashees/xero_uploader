@@ -4,7 +4,7 @@ class Xero
   include ActiveModel::Validations
   
   def initialize(key, secret)
-    # @x = Xeroizer::PrivateApplication.new(key, secret, "#{ENV['OLDPWD']}/xero_uploader2#{XERO_CONFIG['cert_path']}" )
+    @x = Xeroizer::PrivateApplication.new(key, secret, "#{XERO_CONFIG['cert_path']}" )
     @x = Xeroizer::PrivateApplication.new(key, secret, "public/privatekey.pem" )
   end
   
@@ -16,7 +16,7 @@ class Xero
         @trans = @x.Invoice.build(this_invoice)
       end
     end
-    xxx
+    # xxx
   end
   
 end
