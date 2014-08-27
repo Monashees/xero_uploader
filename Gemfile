@@ -41,7 +41,7 @@ group :doc do
 end
 
 # gem 'xeroizer', git: 'https://github.com/tubedude/xeroizer.git'
-gem 'xeroizer'
+gem 'xeroizer', git: 'git@github.com:waynerobinson/xeroizer.git'
 
 gem 'roo'
 
