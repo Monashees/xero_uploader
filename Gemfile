@@ -1,11 +1,14 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '4.1.5'
 # gem 'ruby', '2.0.0'
 
 group :production do
   gem 'rails_12factor'
+
+    gem 'unicorn'
+    gem 'newrelic_rpm'
 
 # Use sqlite3 as the database for Active Record
   gem 'pg'
@@ -37,8 +40,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'xeroizer', git: 'https://github.com/tubedude/xeroizer.git'
-# gem 'xeroizer'
+# gem 'xeroizer', git: 'https://github.com/tubedude/xeroizer.git'
+gem 'xeroizer'
 
 gem 'roo'
 
@@ -49,7 +52,6 @@ group :development do
   gem "rails-erd"
   gem "hirb"
   gem 'guard-spork'
-  gem "better_errors"
   gem "binding_of_caller"
 end
 
