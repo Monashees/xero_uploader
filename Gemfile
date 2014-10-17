@@ -1,16 +1,13 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
-ruby '2.1.2'
+gem 'rails', '4.1.6'
+ruby '2.1.3'
 
 group :production do
   gem 'rails_12factor'
-
-    gem 'unicorn'
-    gem 'newrelic_rpm'
-
-# Use sqlite3 as the database for Active Record
+  gem 'unicorn'
+  gem 'newrelic_rpm'
   gem 'pg'
 end
 
@@ -41,7 +38,7 @@ group :doc do
 end
 
 # gem 'xeroizer', git: 'https://github.com/tubedude/xeroizer.git'
-gem 'xeroizer', git: 'https://github.com/waynerobinson/xeroizer.git'
+gem 'xeroizer' #, git: 'https://github.com/waynerobinson/xeroizer.git'
 
 gem 'roo'
 
