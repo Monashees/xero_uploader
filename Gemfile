@@ -6,7 +6,8 @@ ruby '2.1.5'
 
 group :production do
   gem 'rails_12factor'
-  gem 'unicorn'
+  # gem 'unicorn'
+  gem 'thin'
   gem 'newrelic_rpm'
   gem 'pg'
 end
