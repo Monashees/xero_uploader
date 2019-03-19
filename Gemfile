@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.11.1'
 ruby '2.1.6'
 
 group :production do
@@ -43,6 +43,8 @@ gem 'xeroizer' #, git: 'https://github.com/waynerobinson/xeroizer.git'
 
 gem 'roo'
 
+gem "rubyzip", ">= 1.2.2"
+
 group :development do
   gem "quiet_assets"
   gem "better_errors"
@@ -56,7 +58,7 @@ group :test do
   gem "factory_girl_rails"
   gem 'launchy'
   gem 'database_cleaner'
-  gem 'selenium-webdriver', '~> 2.35.1'
+  gem 'selenium-webdriver'
 end
 
 group :test, :development do
