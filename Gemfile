@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
-ruby '2.1.5'
+ruby '2.1.6'
 
 group :production do
   gem 'rails_12factor'
@@ -60,7 +60,7 @@ group :test do
 end
 
 group :test, :development do
-  gem 'sqlite3'
+  gem 'sqlite3', '1.3.6'
   gem 'guard', '>=2.1.0'
   gem "rspec-rails"
   gem "capybara"
